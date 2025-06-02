@@ -3,57 +3,976 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的第一个网站</title>
-     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Anniring 智能戒指项目商业计划书</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* 这里可以添加一些自定义CSS，但我们主要使用Tailwind */
         body {
-            font-family: 'Inter', sans-serif; /* 设置字体为 Inter，如果加载了 Google Fonts */
+            font-family: 'Inter', sans-serif;
+        }
+        /* Ensure canvas is responsive */
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 200px; /* Default height, can be overridden */
+            width: 100%;
+        }
+        .pie-chart-container {
+            position: relative;
+            margin: auto;
+            height: 150px;
+            width: 60%;
+        }
+         .large-chart-container {
+            position: relative;
+            margin: auto;
+            height: 300px;
+            width: 100%;
+        }
+        .funding-pie-container {
+            position: relative;
+            margin: auto;
+            height: 300px;
+            width: 80%;
         }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-4 font-inter text-gray-800">
-    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden p-6 sm:p-8 md:p-10">
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-4">欢迎来到 Anniring ！</h1>
-        <p class="text-lg text-center text-gray-600 mb-6">我们致力于连接真爱，见证承诺。</p>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-4 sm:p-6 md:p-8 lg:p-12 text-gray-800">
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
+        <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 sm:p-8 md:p-10 text-center rounded-t-3xl">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2">Anniring 智能戒指项目商业计划书</h1>
+            <p class="text-lg sm:text-xl md:text-2xl font-light">科技赋能浪漫，情感连接未来</p>
+        </header>
 
-        <div class="bg-blue-100 p-6 rounded-lg shadow-md text-center">
-            <p class="text-gray-700 mb-4">这是一个关于我们产品的简单介绍。点击下方按钮了解更多详情。</p>
-            <button id="learnMoreBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-                了解更多
-            </button>
-        </div>
+        <main class="p-6 sm:p-8 md:p-10 space-y-12">
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">1. 执行摘要</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">项目概览</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li><strong>项目名称:</strong> Anniring（心期灵）— 情侣情感智能戒指</li>
+                            <li><strong>核心愿景:</strong> 成为全球年轻情侣情感连接的首选智能穿戴品牌，让智能戒指回归戒指本质。</li>
+                            <li><strong>产品定位:</strong> 专为18-35岁情侣设计，融合极简时尚、情绪科技与情感互动。</li>
+                            <li><strong>市场机遇:</strong> 万亿级情绪市场与高速增长的智能穿戴市场交叉点，精准切入蓝海。</li>
+                            <li><strong>商业模式:</strong> 硬件销售 + 情感增值服务 + 情感商城佣金。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">核心竞争优势</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li><strong>专利技术:</strong> 独家情绪算法、汗液雌激素监测专利。</li>
+                            <li><strong>创新技术:</strong> 独有AI情绪感知语音模型、距离感应与预警机制。</li>
+                            <li><strong>双人情绪日历:</strong> 独特设计，丰富情感互动维度。</li>
+                            <li><strong>浪漫工业设计:</strong> 极致佩戴舒适度，回归戒指浪漫本质。</li>
+                            <li><strong>生态构建:</strong> 用户社群与情感服务生态圈，强调用户粘性。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">财务目标 (未来三年)</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>首年:</strong> 销售2万套，营收1050万元，亏损约264.5万元。</li>
+                        <li><strong>第二年:</strong> 营收高速增长，净利润预计达1,502.4万元。</li>
+                        <li><strong>第三年:</strong> 净利润预计达6785万元，充分发挥市场潜力。</li>
+                    </ul>
+                    <p class="mt-4 text-gray-700">
+                        <strong>融资需求:</strong> 寻求天使轮融资1000万元人民币，出让10%股权，用于研发、市场、团队和渠道拓展。
+                    </p>
+                </div>
+            </section>
 
-        <div id="moreInfo" class="mt-8 p-6 bg-green-100 rounded-lg shadow-md hidden">
-            <h3 class="text-xl font-semibold text-green-700 mb-3">更多关于 Anniring 的信息</h3>
-            <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                <li>**核心功能:** 配对灯光、共同日历、情绪监测、AI语音模拟。</li>
-                <li>**产品定位:** 专为18-35岁情侣设计，融合时尚、科技与情感互动。</li>
-                <li>**愿景:** 成为年轻情侣情感连接的首选智能穿戴品牌。</li>
-            </ul>
-        </div>
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">2. 市场分析</h2>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">2.1 市场背景与宏观趋势</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-blue-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">全球穿戴式AI市场规模 (十亿美元)</h4>
+                        <div class="chart-container">
+                            <canvas id="globalWearableAIChart"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2 text-center">2024年 $61.55B &rarr; 2032年 $256.3B (CAGR 19.52%)</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">全球智能戒指市场规模 (十亿美元)</h4>
+                         <div class="chart-container">
+                            <canvas id="globalSmartRingChart"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2 text-center">2023年 $0.21B &rarr; 2028年 $1B (CAGR &gt;30%)</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">中国智能戒指市场规模 (亿元人民币)</h4>
+                        <div class="chart-container">
+                            <canvas id="chinaSmartRingChart"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2 text-center">2021年 &yen;1.5亿 &rarr; 2028年 &yen;6.1亿 (CAGR &gt;22%)</p>
+                    </div>
+                </div>
+                <div class="bg-yellow-50 p-4 rounded-lg shadow-md mb-8">
+                    <h4 class="font-semibold text-lg mb-2">情感消费与悦己经济</h4>
+                    <p class="text-gray-700 mb-4">
+                        现代年轻群体消费观念已发生深刻变化，更注重产品的情感价值、个性化体验和社交属性。
+                    </p>
+                    <div class="flex justify-center items-center">
+                         <div class="pie-chart-container">
+                            <canvas id="emotionalConsumptionChart"></canvas>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2 text-center">
+                        超过60%的年轻消费者愿意为能够带来情感满足和个性化体验的产品支付溢价。
+                    </p>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">2.2 目标用户画像与痛点</h3>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">核心用户特征</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>18-35岁城市年轻情侣，月收入3000-15000元。</li>
+                            <li>科技产品尝鲜者，情感需求者。</li>
+                            <li>时尚潮流追随者，社交活跃者，注重仪式感。</li>
+                            <li>对隐私有认知，情侣间愿分享情感数据。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">痛点洞察</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>沟通隔阂:</strong> 异地恋或不善表达情侣缺乏有效沟通。</li>
+                            <li><strong>情感倦怠:</strong> 日常平淡，缺乏新鲜感和仪式感。</li>
+                            <li><strong>陪伴缺失:</strong> 忙碌生活导致陪伴减少，渴望24/7无感知连接。</li>
+                            <li><strong>情绪感知不足:</strong> 难察觉伴侣情绪，无法及时关怀。</li>
+                            <li><strong>礼物选择困扰:</strong> 节日礼物缺乏心意和互动性。</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">2.3 竞争分析</h3>
+                <p class="text-gray-700 mb-4">
+                    智能戒指市场新兴，目前由健康监测和辅助交互类产品主导。Anniring将主要竞争对手分为以下几类：
+                </p>
+                <div class="overflow-x-auto rounded-lg shadow-md">
+                    <table class="min-w-full bg-white rounded-lg">
+                        <thead>
+                            <tr class="bg-blue-100 text-blue-800">
+                                <th class="py-3 px-4 text-left rounded-tl-lg">类别/属性</th>
+                                <th class="py-3 px-4 text-left">产品/品牌</th>
+                                <th class="py-3 px-4 text-left">核心功能</th>
+                                <th class="py-3 px-4 text-left">价格区间</th>
+                                <th class="py-3 px-4 text-left">优势</th>
+                                <th class="py-3 px-4 text-left">劣势</th>
+                                <th class="py-3 px-4 text-left rounded-tr-lg">Anniring差异化优势</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td rowspan="6" class="py-3 px-4 font-semibold bg-gray-50 align-top">A. 智能戒指 (健康监测)</td>
+                                <td class="py-3 px-4">Oura Ring</td>
+                                <td class="py-3 px-4">睡眠、心率、体温、活动量、HRV</td>
+                                <td class="py-3 px-4">$299-$599</td>
+                                <td class="py-3 px-4">数据精确、算法成熟、品牌知名度高</td>
+                                <td class="py-3 px-4">价格昂贵，设计偏功能性，缺乏情感互动</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">专注情绪感知和AI语音模拟，独特情感互动方式，双人情绪日历，设计更浪漫。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Samsung Galaxy Ring</td>
+                                <td class="py-3 px-4">心率、血氧、睡眠、活动量、AI健康指导</td>
+                                <td class="py-3 px-4">$100-$300 (预计)</td>
+                                <td class="py-3 px-4">品牌号召力强，生态协同，AI健康指导潜力大</td>
+                                <td class="py-3 px-4">预计仍以健康为主，情感互动不足，设计偏科技</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">深度定制情感互动，AI模拟情侣语音，强调“约定”浪漫意义。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">RingConn</td>
+                                <td class="py-3 px-4">睡眠、心率、血氧、体温、活动量、压力、NFC支付</td>
+                                <td class="py-3 px-4">$279</td>
+                                <td class="py-3 px-4">功能全面，性价比高，续航长</td>
+                                <td class="py-3 px-4">品牌影响力建立中，情感互动缺失，设计保守</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">专注情感科技，AI语音模拟和情绪互动，弥补情感维系空白。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Ultrahuman Ring</td>
+                                <td class="py-3 px-4">睡眠、活动量、体温、HRV</td>
+                                <td class="py-3 px-4">$349</td>
+                                <td class="py-3 px-4">极致轻薄，佩戴舒适，特定健康监测有优势</td>
+                                <td class="py-3 px-4">功能单一，市场占有率小</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">情感功能独有，设计更具浪漫美学。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">boAt Smart Ring</td>
+                                <td class="py-3 px-4">心率、睡眠、血氧、HRV、温度、运动监测</td>
+                                <td class="py-3 px-4">$100-$150</td>
+                                <td class="py-3 px-4">价格亲民，印度市场有影响力</td>
+                                <td class="py-3 px-4">缺乏创新点，国际竞争力有限</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">情感互动和设计美学远超，提供深层情感价值。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Femometer Smart Ring</td>
+                                <td class="py-3 px-4">基础体温、睡眠、孕期与经期管理</td>
+                                <td class="py-3 px-4">$100-$150</td>
+                                <td class="py-3 px-4">垂直细分市场，专业性强</td>
+                                <td class="py-3 px-4">用户群体小众，非通用型</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">面向更广泛情侣市场，提供通用情感互动。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td rowspan="2" class="py-3 px-4 font-semibold bg-gray-50 align-top">B. 智能戒指 (辅助交互/AI助理)</td>
+                                <td class="py-3 px-4">ORII Ring</td>
+                                <td class="py-3 px-4">骨传导通话、快捷功能</td>
+                                <td class="py-3 px-4">$199</td>
+                                <td class="py-3 px-4">创新骨传导通话，特定场景实用</td>
+                                <td class="py-3 px-4">续航短，功能局限，设计偏科技</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">AI语音模拟更强调情感交流和个性化，设计更具饰品属性。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">WIZPR Ring</td>
+                                <td class="py-3 px-4">语音AI助手，语音备忘录</td>
+                                <td class="py-3 px-4">$150-$200</td>
+                                <td class="py-3 px-4">专注于AI语音交互，便捷记录</td>
+                                <td class="py-3 px-4">市场影响力不足，功能单一，缺乏情感深度</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">AI语音模拟是双向、模拟情侣声音的，更具情感温度和互动性。</td>
+                            </tr>
+                             <tr class="border-b border-gray-200">
+                                <td rowspan="2" class="py-3 px-4 font-semibold bg-gray-50 align-top">C. 情侣专属智能穿戴 (非戒指)</td>
+                                <td class="py-3 px-4">Totwoo (情侣手链/项链)</td>
+                                <td class="py-3 px-4">异地闪光、心跳感应、远程触碰</td>
+                                <td class="py-3 px-4">$100-$300/对</td>
+                                <td class="py-3 px-4">强情感属性，设计浪漫</td>
+                                <td class="py-3 px-4">功能简单，缺乏深度交互和AI赋能，佩戴形式不如戒指隐蔽</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">情感互动更智能化、个性化（AI语音、情绪感知），戒指更具“定情”意义。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">The Touch (情侣手环)</td>
+                                <td class="py-3 px-4">远程触碰振动</td>
+                                <td class="py-3 px-4">$100-$200/对</td>
+                                <td class="py-3 px-4">模拟物理触碰，增强连接感</td>
+                                <td class="py-3 px-4">功能单一，缺乏深度情感互动和数据支持</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">提供更丰富、智能的情感互动维度，包括语音、情绪和日历。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td rowspan="2" class="py-3 px-4 font-semibold bg-gray-50 align-top">D. 主流智能手表/手环 (广义竞争)</td>
+                                <td class="py-3 px-4">Apple Watch</td>
+                                <td class="py-3 px-4">全面健康监测、运动、通信、支付、App生态</td>
+                                <td class="py-3 px-4">$200-$800</td>
+                                <td class="py-3 px-4">功能强大，生态完善，品牌影响力巨大</td>
+                                <td class="py-3 px-4">价格昂贵，设计偏运动/科技，缺乏情侣专属设计，佩戴不便</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">专注情侣情感连接，提供私密、浪漫和AI赋能互动，更具饰品属性和长续航。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Fitbit / 华为手环</td>
+                                <td class="py-3 px-4">运动追踪、心率、睡眠监测、通知</td>
+                                <td class="py-3 px-4">$30-$150</td>
+                                <td class="py-3 px-4">性价比高，健康监测实用，续航长</td>
+                                <td class="py-3 px-4">功能基础，缺乏深度情感互动，设计偏运动</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">不直接竞争健康监测，提供其缺失的情侣专属情感互动和AI语音模拟。</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td rowspan="2" class="py-3 px-4 font-semibold bg-gray-50 align-top">E. 传统情侣礼品 (替代性竞争)</td>
+                                <td class="py-3 px-4">情侣对戒 (周大福、卡地亚)</td>
+                                <td class="py-3 px-4">象征爱情、承诺、时尚饰品</td>
+                                <td class="py-3 px-4">$500-$数万元</td>
+                                <td class="py-3 px-4">情感象征意义深远，材质保值，设计经典</td>
+                                <td class="py-3 px-4">缺乏科技互动性，无法实现实时情感连接和智能提醒</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium">保留传统“定情”寓意，融入AI科技，成为能“对话”、能“感知”的现代情感信物。</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 rounded-bl-lg">定制礼品 (刻字项链、照片书)</td>
+                                <td class="py-3 px-4">个性化定制、情感表达、纪念意义</td>
+                                <td class="py-3 px-4">$50-$500</td>
+                                <td class="py-3 px-4">独特性强，表达心意</td>
+                                <td class="py-3 px-4">缺乏互动性，一次性消费，无法持续维系情感</td>
+                                <td class="py-3 px-4 text-teal-600 font-medium rounded-br-lg">不仅是定制礼物，更是持续互动的情感平台，能不断创造回忆和连接。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mt-8 mb-4">Anniring的核心竞争优势总结：</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li><strong>开创“情绪科技”蓝海市场：</strong> 独有AI语音模拟和情绪感知，提供深度情感互动。</li>
+                    <li><strong>“让智能戒指回归戒指”：</strong> 强调浪漫设计和饰品属性，兼具科技与美学。</li>
+                    <li><strong>构建情感生态：</strong> App内情感商城、AI助理等，提升用户粘性和生命周期价值。</li>
+                </ul>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">3. 产品与服务</h2>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">3.1 产品概述与设计理念</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                    <li><strong>产品概述:</strong> Anniring是一款专为情侣设计的智能戒指，融合精密硬件与创新软件算法，打造无缝情感连接体验。</li>
+                    <li><strong>设计理念:</strong> “让智能戒指回归戒指”——极简美学、浪漫寓意、高品质亲肤材质（医用级不锈钢、钛合金、陶瓷），隐形科技。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">3.2 核心功能模块</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">AI模拟情侣语音互动</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>创新点:</strong> 模拟情侣独特音色，高度个性化私密“指尖传情”。</li>
+                            <li><strong>功能:</strong> 个性化语音模型生成、自定义预设语音、智能对话、语音留言。</li>
+                            <li><strong>价值:</strong> 突破距离和表达障碍，爱意表达更生动、私密、创意。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">情绪感知与AI情感助理</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>创新点:</strong> 情绪监测升级为指导性情感互动工具。</li>
+                            <li><strong>功能:</strong> 生理数据监测（HRV）、情绪曲线可视化、智能情绪预警、AI建议。</li>
+                            <li><strong>价值:</strong> 提升情绪共情，促进理解关怀，避免沟通矛盾。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">双人日历与智能预警</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>创新点:</strong> 日历升级为共同规划、目标管理和情感预警系统。</li>
+                            <li><strong>功能:</strong> 共享日程、纪念日管理、智能提醒、情绪预警、共同目标设置。</li>
+                            <li><strong>价值:</strong> 铭记重要时刻，增强协作成长，化解潜在情感危机。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">情侣专属配对感应装置</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>创新点:</strong> 无声、私密、仪式感的爱意传递。</li>
+                            <li><strong>功能:</strong> 预设振动/灯光信号、轻触传情、状态同步、距离感应。</li>
+                            <li><strong>价值:</strong> 增加默契乐趣，提升互动仪式感。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg shadow-md md:col-span-2">
+                        <h4 class="font-semibold text-lg mb-2">情感商城模块</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>创新点:</strong> 聚合情绪管理和情感互动类商品，AI算法情感推荐。</li>
+                            <li><strong>功能:</strong> 个性化礼品推荐、浪漫活动推荐、创意定制服务、品牌合作。</li>
+                            <li><strong>价值:</strong> 一站式解决情侣消费需求，提升附加值和用户粘性。</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mt-8 mb-4">3.3 单人模式与未来迭代</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">单人模式功能</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>个人情绪洞察、AI情绪助理、自我成长与记录、商城模块。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">功能取舍与未来迭代</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>MVP聚焦:</strong> 情绪科技与情感互动，放弃医疗级健康监测。</li>
+                            <li><strong>未来迭代:</strong> 酌情增加女性雌激素监测、睡眠质量监测，严格遵守隐私。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">4. 品牌/Logo方案</h2>
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">品牌名称：Anniring (心期灵)</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li><strong>英文名:</strong> Anniring (Anniversary + Ring) - 寓意记录纪念时刻，爱意凝结指尖。</li>
+                            <li><strong>中文名:</strong> 心期灵 (谐音“新奇灵”、“星期零”) - 朗朗上口，易传播，寓意新起点、新颖智能。</li>
+                            <li><strong>品牌Slogan:</strong> “浪漫科技，情感连接。” (Romantic on Your Finger.)</li>
+                            <li><strong>品牌调性:</strong> 现代、浪漫、智能、温馨、时尚、私密。</li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center items-center p-4 bg-gray-50 rounded-lg shadow-md">
+                        <img src="file:///Users/ryan/Desktop/CASES/SmartRing/4x/AR_logo.png" alt="Anniring Logo 示意图" class="max-w-full h-auto rounded-md" 
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Logo设计理念与应用</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>设计理念:</strong> 融合“戒指”、“情绪”、“情感连接”、“科技智能”等概念，极简线条，现代风格。</li>
+                        <li><strong>图形:</strong> 艺术化处理字母“A”或“R”形似戒指，融入连接线条。</li>
+                        <li><strong>品牌色:</strong> 腮红色、珊瑚色、海蓝色、柔和紫色营造温暖爱意。</li>
+                        <li><strong>字体:</strong> 简约富有设计感的定制字体。</li>
+                        <li><strong>应用:</strong> 官网、App图标、社交媒体、包装、戒指内壁等。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">5. 软硬件研发计划</h2>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">5.1 硬件开发计划</h3>
+                <div class="overflow-x-auto rounded-lg shadow-md mb-6">
+                    <table class="min-w-full bg-white rounded-lg">
+                        <thead>
+                            <tr class="bg-blue-100 text-blue-800">
+                                <th class="py-3 px-4 text-left rounded-tl-lg">模块/功能</th>
+                                <th class="py-3 px-4 text-left">关键技术/传感器</th>
+                                <th class="py-3 px-4 text-left rounded-tr-lg">备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4">核心处理单元</td><td class="py-3 px-4">超低功耗MCU (Nordic nRF52/Ambiq Apollo)</td><td class="py-3 px-4">长续航，高效处理</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4">生理传感器</td><td class="py-3 px-4">高精度PPG传感器（ADI/Maxim系列）</td><td class="py-3 px-4">情绪分析核心数据源</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4">运动/姿态传感器</td><td class="py-3 px-4">6轴或9轴IMU (Bosch/ST)</td><td class="py-3 px-4">手势识别，轻触检测</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4">语音输入</td><td class="py-3 px-4">微型MEMS麦克风</td><td class="py-3 px-4">AI语音模拟输入</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4">指示与反馈</td><td class="py-3 px-4">微型RGB LED灯，振动马达</td><td class="py-3 px-4">配对灯光、状态指示、提醒</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4">无线通信</td><td class="py-3 px-4">蓝牙低功耗 (BLE 5.2/5.3)</td><td class="py-3 px-4">戒指与App通信，稳定高效</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4">电源管理</td><td class="py-3 px-4">高能量密度锂离子电池、专用PMIC</td><td class="py-3 px-4">7-15天续航</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4">充电方式</td><td class="py-3 px-4">无线充电 (Qi标准或私有协议)</td><td class="py-3 px-4">便捷充电，提升防水</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4">存储</td><td class="py-3 px-4">内置闪存 (Flash)</td><td class="py-3 px-4">固件、离线数据缓存</td></tr>
+                            <tr><td class="py-3 px-4 rounded-bl-lg">结构与防水</td><td class="py-3 px-4">医用级不锈钢/钛合金外壳，陶瓷内衬，IP68防水</td><td class="py-3 px-4 rounded-br-lg">佩戴舒适、耐用</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">5.1.2 硬件研发流程</h3>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-700 mb-6">
+                    <li><strong>阶段一 (融资后1-2个月):</strong> 概念设计与技术验证（核心模块选型、ID/MD初步方案、技术可行性评估）。</li>
+                    <li><strong>阶段二 (融资后2-4个月):</strong> 原型开发与测试（原理样机制作、PCB设计、核心算法与固件开发）。</li>
+                    <li><strong>阶段三 (融资后4-6个月):</strong> 工程样机(EVT)与设计验证（EVT样机生产、全面测试、模具开发、认证准备）。</li>
+                    <li><strong>阶段四 (融资后6-8个月):</strong> 生产验证(PVT)与量产准备（PVT样机生产、供应链搭建、大规模生产流程确定）。</li>
+                </ol>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">5.2 软件开发计划</h3>
+                <div class="overflow-x-auto rounded-lg shadow-md mb-6">
+                    <table class="min-w-full bg-white rounded-lg">
+                        <thead>
+                            <tr class="bg-blue-100 text-blue-800">
+                                <th class="py-3 px-4 text-left rounded-tl-lg">模块/功能</th>
+                                <th class="py-3 px-4 text-left">关键技术/接口</th>
+                                <th class="py-3 px-4 text-left rounded-tr-lg">备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 font-semibold">移动App (iOS/Android)</td><td class="py-3 px-4"></td><td class="py-3 px-4">用户核心交互界面</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">设备连接与管理</td><td class="py-3 px-4">BLE API</td><td class="py-3 px-4">稳定高效连接</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">数据同步与存储</td><td class="py-3 px-4">BLE GATT Profile</td><td class="py-3 px-4">数据安全，离线可用</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">仪表盘与数据可视化</td><td class="py-3 px-4">Charting Libraries</td><td class="py-3 px-4">直观呈现数据</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">AI语音模拟模块</td><td class="py-3 px-4">云端TTS/NLP API</td><td class="py-3 px-4">核心亮点</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">情绪感知与AI助理</td><td class="py-3 px-4">云端AI服务API</td><td class="py-3 px-4">情绪数据分析与反馈</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">共同日历管理</td><td class="py-3 px-4">Cloud API</td><td class="py-3 px-4">共享日程管理</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">配对灯光与振动</td><td class="py-3 px-4">BLE GATT Write/Notify</td><td class="py-3 px-4">戒指个性化设置</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">情感商城</td><td class="py-3 px-4">电商SDK/API</td><td class="py-3 px-4">商业化变现</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">用户账户系统</td><td class="py-3 px-4">OAuth2.0</td><td class="py-3 px-4">用户身份管理</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">OTA固件升级</td><td class="py-3 px-4">OTA SDK</td><td class="py-3 px-4">产品迭代与bug修复</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 font-semibold">云服务平台</td><td class="py-3 px-4"></td><td class="py-3 px-4">后端支撑，实现复杂逻辑与AI</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">数据接口</td><td class="py-3 px-4">RESTful API</td><td class="py-3 px-4">App与云端通信</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">AI模型服务</td><td class="py-3 px-4">TensorFlow/PyTorch</td><td class="py-3 px-4">AI功能核心</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">数据库</td><td class="py-3 px-4">MongoDB/PostgreSQL</td><td class="py-3 px-4">大数据存储</td></tr>
+                            <tr class="border-b border-gray-200"><td class="py-3 px-4 pl-8">消息队列</td><td class="py-3 px-4">Kafka/RabbitMQ</td><td class="py-3 px-4">高可用，响应速度</td></tr>
+                            <tr><td class="py-3 px-4 pl-8 rounded-bl-lg">日志与监控</td><td class="py-3 px-4">ELK Stack/Prometheus</td><td class="py-3 px-4 rounded-br-lg">故障排查与性能优化</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">5.2.2 软件研发流程</h3>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+                    <li><strong>阶段一 (融资后1-2个月):</strong> 需求分析与架构设计。</li>
+                    <li><strong>阶段二 (融资后2-5个月):</strong> 核心功能开发与内部测试。</li>
+                    <li><strong>阶段三 (融资后5-7个月):</strong> 全面测试与优化（用户测试、性能、安全）。</li>
+                    <li><strong>阶段四 (持续进行):</strong> 迭代与维护。</li>
+                </ol>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">6. 营销计划</h2>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">6.1 品牌定位与传播核心</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                    <li><strong>品牌定位:</strong> 情绪类智能穿戴领域“浪漫科技”的开创者与领导者。</li>
+                    <li><strong>传播核心:</strong> “连接真爱，见证承诺”的智能信物，科技力量将情感连接可视化、可感知化。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">6.2 目标市场与推广策略</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">线上推广 (数字营销为主)</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>第一阶段 (引爆期):</strong> 聚焦线上，打造爆款声量。
+                                <ul class="list-circle pl-5">
+                                    <li>KOL/KOC合作 (小红书、抖音、B站、微信视频号)</li>
+                                    <li>话题营销 (#异地恋神器#，#情侣专属仪式感#)</li>
+                                    <li>社交媒体运营，社群裂变活动</li>
+                                    <li>电商平台预热与首发 (天猫、京东，直播带货)</li>
+                                    <li>公关与媒体合作 (科技、时尚媒体)</li>
+                                </ul>
+                            </li>
+                            <li><strong>第二阶段 (增长期):</strong> 渠道深耕，品牌强化，社群活化。
+                                <ul class="list-circle pl-5">
+                                    <li>线上渠道拓展 (拼多多、唯品会、考拉海购)</li>
+                                    <li>用户社群建设 (微信群、App内置社群，线上线下活动)</li>
+                                    <li>品牌沉淀与口碑扩散 (微电影、主题曲，老带新)</li>
+                                    <li>产品迭代与优化 (用户深度反馈)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">线下推广 (逐步拓展)</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>时尚/潮玩店合作 (高端百货、概念店)</li>
+                            <li>情侣主题活动赞助 (马拉松、市集、婚礼博览会)</li>
+                            <li>快闪店/体验店 (核心商圈)</li>
+                            <li>校园推广 (大学校园，情侣节)</li>
+                        </ul>
+                        <h4 class="font-semibold text-lg mb-2 mt-4">销售策略与用户激励</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>情侣套装主推，预售与众筹，“早鸟”优惠。</li>
+                            <li>用户推荐奖励，会员积分体系，UGC激励。</li>
+                            <li>定制服务捆绑销售。</li>
+                        </ul>
+                        <h4 class="font-semibold text-lg mb-2 mt-4">品牌公关与舆情管理</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>媒体关系建立，危机公关预案，用户社群积极管理。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">7. 运营计划</h2>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">7.1 供应链与生产管理</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                    <li><strong>供应商选择与管理:</strong> 筛选国际先进芯片、传感器、电池供应商，建立备选，确保质量与成本。</li>
+                    <li><strong>生产制造合作:</strong> 优先选择有智能穿戴经验、ISO认证的ODM/OEM厂商，制定严格生产流程与质控节点。</li>
+                    <li><strong>质量控制体系:</strong> 制定高于行业标准的产品检测规范，全流程质检，高低温、跌落、防水等可靠性测试。</li>
+                    <li><strong>库存与物流:</strong> JIT或安全库存策略，优化库存周转；高效物流配送网络。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">7.2 销售与渠道管理</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                    <li><strong>线上销售:</strong> 自营官方商城、京东/天猫旗舰店、小红书/抖音电商、得物/有赞等。</li>
+                    <li><strong>线下销售 (逐步推进):</strong> 合作零售门店、体验店/快闪店、礼品渠道。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">7.3 客户服务与售后支持</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li><strong>多渠道客服:</strong> 在线、电话、社交媒体客服。</li>
+                    <li><strong>完善售后政策:</strong> 遵循国家“三包”，提供保修、维修服务。</li>
+                    <li><strong>用户反馈与迭代:</strong> 建立反馈机制，数据分析，驱动产品迭代。</li>
+                </ul>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">8. 财务计划</h2>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">8.1 盈利模式与成本构成</h3>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-blue-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">盈利模式</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>硬件销售:</strong> 情侣套装（520元）和单枚戒指（299元）。</li>
+                            <li><strong>增值服务订阅:</strong> 高级AI助理、定制语音包、专属心动活动/课程。</li>
+                            <li><strong>情感商城佣金:</strong> 引入第三方供应商，收取销售佣金。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">主要成本构成</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>研发成本（硬件、软件、AI算法）</li>
+                            <li>生产成本（原材料、制造、物流）</li>
+                            <li>营销成本（品牌推广、渠道佣金）</li>
+                            <li>运营成本（团队薪酬、办公、客服、系统维护）</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">8.2 营收与利润预测 (三年)</h3>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md mb-6">
+                    <h4 class="font-semibold text-lg mb-2 text-center">总营收与净利润趋势 (万元)</h4>
+                    <div class="large-chart-container">
+                        <canvas id="revenueProfitChart"></canvas>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2 text-center">营收构成 (万元)</h4>
+                        <div class="large-chart-container">
+                           <canvas id="revenueCompositionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2 text-center">毛利率趋势 (%)</h4>
+                        <div class="large-chart-container">
+                            <canvas id="grossMarginChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 text-gray-700">
+                    <h4 class="font-semibold text-lg mb-2">财务分析与盈利能力说明:</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>初期投入与快速收窄亏损:</strong> 首年亏损源于研发、市场启动，但高客单价和有效推广迅速启动营收。</li>
+                        <li><strong>高速增长驱动盈利:</strong> 第二年起营收爆发式增长，迅速扭亏为盈，净利率高达36.27%。</li>
+                        <li><strong>规模效应与高毛利优势:</strong> 硬件毛利率随规模提升，增值服务高毛利（95%-97%）是核心增长引擎。</li>
+                        <li><strong>运营效率提升:</strong> 运营费用占比随规模扩大而降低，体现精益管理。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">9. 融资计划</h2>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">9.1 融资轮次、总额与股权</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                    <li><strong>轮次:</strong> 天使轮融资</li>
+                    <li><strong>目标金额:</strong> 1000万元人民币</li>
+                    <li><strong>股权出让:</strong> 10%</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">9.2 资金用途分配</h3>
+                <div class="flex justify-center items-center mb-6">
+                    <div class="funding-pie-container">
+                        <canvas id="fundingUsageChart"></canvas>
+                    </div>
+                </div>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                    <li><strong>产品研发与迭代 (25%):</strong> AI算法优化、软硬件功能迭代、平台架构与安全。</li>
+                    <li><strong>市场推广与销售渠道拓展 (35%):</strong> 品牌建设、KOL/KOC合作、线上渠道运营、线下探索。</li>
+                    <li><strong>团队建设与日常运营 (25%):</strong> 核心人才招聘与激励、薪酬福利、办公场地。</li>
+                    <li><strong>流动资金与风险储备 (15%):</strong> 初期生产周转、日常现金流、应对不可预见风险。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">9.3 资金到位后里程碑 (12-18个月)</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                    <li><strong>产品与技术:</strong> 3个月内完成量产优化，6个月内App核心功能稳定，12个月内AI情感助理升级。</li>
+                    <li><strong>市场与销售:</strong> 6个月内全面上线电商，12个月内达成首年2万套销售目标，18个月内用户数5万+。</li>
+                    <li><strong>团队与运营:</strong> 6个月内核心团队到位，12个月内供应链优化。</li>
+                    <li><strong>财务:</strong> 18个月内实现月度现金流转正，为A轮融资积累数据。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">9.4 退出机制</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li><strong>被战略性收购 (Trade Sale):</strong> 吸引科技巨头、消费电子或社交平台并购。</li>
+                    <li><strong>独立首次公开募股 (IPO):</strong> 市场规模持续扩大，营收利润强劲增长，符合上市条件。</li>
+                    <li><strong>股权转让/二次出售:</strong> 早期投资者可转让股权给后续轮次投资机构。</li>
+                </ul>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">10. 团队管理</h2>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">10.1 核心团队成员</h3>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-blue-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">黄瑞生 (Ryan H.) - 创始人兼项目总监 (CEO)</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>职责:</strong> 整体战略规划、产品愿景、市场拓展、融资管理。</li>
+                            <li><strong>优势:</strong> 产品洞察力、市场敏感度、品牌塑造能力，从0到1智能硬件落地经验，跨领域整合。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">陶金 (Jam Ton) - 高级合伙人兼首席技术官 (CTO)</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>职责:</strong> 技术战略、核心算法研发、软硬件系统集成、云服务平台搭建。</li>
+                            <li><strong>优势:</strong> 智能电子产品开发、AI技术应用、大数据处理经验，团队管理与项目交付能力。</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4">10.2 团队优势与人才规划</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li><strong>团队优势:</strong> 战略与执行并重，跨界融合，实战经验丰富，敏锐市场洞察，高效解决问题。</li>
+                    <li><strong>人才需求:</strong> 扩充研发（硬件、软件、AI算法）、市场运营（品牌、推广、电商、客服）、供应链管理人才。</li>
+                    <li><strong>人才培养与激励:</strong> 内部培训、外部学习、绩效奖励、股权激励、积极企业文化。</li>
+                </ul>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">11. 风险分析与应对策略</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">11.1 市场竞争风险</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>风险:</strong> 竞争加剧，新竞争者进入细分市场。</li>
+                            <li><strong>应对:</strong> 强化核心壁垒（AI情感算法），深耕细分市场，快速迭代差异化，生态合作。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">11.2 用户需求与接受度风险</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>风险:</strong> 新型产品教育成本高，用户接受度不确定。</li>
+                            <li><strong>应对:</strong> 精准用户教育（KOL/KOC），用户调研与敏捷迭代，MVP策略。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">11.3 技术风险</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>风险:</strong> AI算法精度、硬件量产难题，数据安全与隐私。</li>
+                            <li><strong>应对:</strong> 敏捷开发，专家团队保障，严格质控，数据安全与隐私合规。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">11.4 供应链与生产风险</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>风险:</strong> 元器件供应不稳定，代工厂产能或质量问题。</li>
+                            <li><strong>应对:</strong> 多元化供应商，战略备货，紧密合作，成本控制。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">11.5 市场推广与用户获取风险</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>风险:</strong> 营销ROI不理想，获客成本高。</li>
+                            <li><strong>应对:</strong> 精准营销与社群运营，口碑传播，多渠道拓展，数据驱动决策。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2">11.6 团队与运营风险</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>风险:</strong> 核心团队流失；新团队成员磨合期长，影响效率；运营管理能力跟不上业务快速发展。</li>
+                            <li><strong>应对:</strong> 股权激励与文化建设，人才储备与培养，规范化管理，引入外部顾问。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">12. 发展规划</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-4 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">12.1 短期规划 (MVP阶段，1-2年)</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>产品:</strong> MVP版本上市，供应链搭建，必要认证。</li>
+                            <li><strong>市场:</strong> 众筹/预售，精准线上营销，KOL/KOC合作，用户社群建设。</li>
+                            <li><strong>品牌:</strong> 确立“Anniring”品牌定位，传递核心理念。</li>
+                            <li><strong>团队:</strong> 扩充核心研发、市场运营团队。</li>
+                            <li><strong>财务:</strong> 首年销售2万套，营收1050万元，控制亏损。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">12.2 中期规划 (规模发展，3-5年)</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>产品:</strong> 功能升级（AI语音、情绪识别），辅助健康功能（雌激素、睡眠），材质设计拓展。</li>
+                            <li><strong>服务:</strong> 完善增值服务体系（高级AI、情感商城、内容社区）。</li>
+                            <li><strong>市场:</strong> 巩固线上，探索线下体验店，拓展国际市场，跨界合作。</li>
+                            <li><strong>团队:</strong> 完善组织架构，提升专业能力。</li>
+                            <li><strong>财务:</strong> 实现盈利，营收突破1.3亿元，净利润超6000万元。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">12.3 长期规划 (生态构建与行业领导者，5年以上)</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li><strong>领导者:</strong> 成为情感科技领域领导者。</li>
+                            <li><strong>AI赋能:</strong> 构建强大情感AI引擎，深度情绪洞察，关系管理建议。</li>
+                            <li><strong>生态融合:</strong> 与智能家居、AR/VR联动，构建沉浸式情感体验。</li>
+                            <li><strong>大数据:</strong> 匿名化数据分析，发布行业白皮书。</li>
+                            <li><strong>全球化:</strong> 打造全球知名情感智能品牌。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-800 text-white p-6 sm:p-8 text-center rounded-b-3xl">
+            <p class="text-sm sm:text-base">&copy; 2025 Anniring. All Rights Reserved.</p>
+        </footer>
     </div>
+
+    <script>
+        // Wait for the DOM to be fully loaded before initializing charts
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chart 1: Global Wearable AI Market Size
+            const globalWearableAIData = {
+                labels: ['2024年', '2032年'],
+                datasets: [{
+                    label: '市场规模 (十亿美元)',
+                    data: [61.55, 256.3],
+                    backgroundColor: 'rgba(136, 132, 216, 0.6)', // #8884d8 with alpha
+                    borderColor: 'rgba(136, 132, 216, 1)',
+                    borderWidth: 1,
+                    borderRadius: { topLeft: 10, topRight: 10 }
+                }]
+            };
+            new Chart(document.getElementById('globalWearableAIChart'), {
+                type: 'bar',
+                data: globalWearableAIData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, title: { display: true, text: '十亿美元' } } }
+                }
+            });
+
+            // Chart 2: Global Smart Ring Market Size
+            const smartRingGlobalData = {
+                labels: ['2023年', '2028年'],
+                datasets: [{
+                    label: '市场规模 (十亿美元)',
+                    data: [0.21, 1.0],
+                    borderColor: 'rgba(130, 202, 157, 1)', // #82ca9d
+                    backgroundColor: 'rgba(130, 202, 157, 0.1)',
+                    tension: 0.1,
+                    fill: true,
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            };
+            new Chart(document.getElementById('globalSmartRingChart'), {
+                type: 'line',
+                data: smartRingGlobalData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, title: { display: true, text: '十亿美元' } } }
+                }
+            });
+
+            // Chart 3: China Smart Ring Market Size
+            const chinaSmartRingData = {
+                labels: ['2021年', '2028年'],
+                datasets: [{
+                    label: '市场规模 (亿元人民币)',
+                    data: [1.5, 6.1],
+                    backgroundColor: 'rgba(130, 202, 255, 0.6)', // #82caff with alpha
+                    borderColor: 'rgba(130, 202, 255, 1)',
+                    borderWidth: 1,
+                    borderRadius: { topLeft: 10, topRight: 10 }
+                }]
+            };
+            new Chart(document.getElementById('chinaSmartRingChart'), {
+                type: 'bar',
+                data: chinaSmartRingData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, title: { display: true, text: '亿元人民币' } } }
+                }
+            });
+
+            // Chart 4: Emotional Consumption
+            const emotionalConsumptionData = {
+                labels: ['愿意支付溢价', '不愿意支付溢价'],
+                datasets: [{
+                    data: [60, 40],
+                    backgroundColor: ['#8884d8', '#82ca9d'],
+                    hoverOffset: 4
+                }]
+            };
+            new Chart(document.getElementById('emotionalConsumptionChart'), {
+                type: 'pie',
+                data: emotionalConsumptionData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top' } }
+                }
+            });
+
+            // Chart 5: Revenue and Profit Forecast
+            const revenueProfitData = {
+                labels: ['第一年', '第二年', '第三年'],
+                datasets: [
+                    {
+                        label: '总营收 (万元)',
+                        data: [1050, 4280, 13500],
+                        borderColor: '#8884d8',
+                        backgroundColor: 'rgba(136, 132, 216, 0.1)',
+                        yAxisID: 'y',
+                        tension: 0.1,
+                        fill: true
+                    },
+                    {
+                        label: '净利润 (万元)',
+                        data: [-264.5, 1502.4, 6785],
+                        borderColor: '#ff7300',
+                        backgroundColor: 'rgba(255, 115, 0, 0.1)',
+                        yAxisID: 'y1',
+                        tension: 0.1,
+                        fill: true
+                    }
+                ]
+            };
+            new Chart(document.getElementById('revenueProfitChart'), {
+                type: 'line',
+                data: revenueProfitData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { type: 'linear', display: true, position: 'left', title: { display: true, text: '营收 (万元)'} },
+                        y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: '净利润 (万元)'}, grid: { drawOnChartArea: false } }
+                    },
+                    plugins: { legend: { position: 'top' } }
+                }
+            });
+
+            // Chart 6: Revenue Composition
+            const revenueCompositionData = {
+                labels: ['第一年', '第二年', '第三年'],
+                datasets: [
+                    {
+                        label: '硬件销售营收 (万元)',
+                        data: [1040, 4160, 13000],
+                        backgroundColor: 'rgba(76, 175, 80, 0.6)', // #4CAF50 with alpha
+                        borderColor: 'rgba(76, 175, 80, 1)',
+                        borderWidth: 1,
+                        borderRadius: { topLeft: 10, topRight: 10 }
+                    },
+                    {
+                        label: '增值服务营收 (万元)',
+                        data: [10, 120, 500],
+                        backgroundColor: 'rgba(255, 193, 7, 0.6)', // #FFC107 with alpha
+                        borderColor: 'rgba(255, 193, 7, 1)',
+                        borderWidth: 1,
+                        borderRadius: { topLeft: 10, topRight: 10 }
+                    }
+                ]
+            };
+            new Chart(document.getElementById('revenueCompositionChart'), {
+                type: 'bar',
+                data: revenueCompositionData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { stacked: true },
+                        y: { stacked: true, beginAtZero: true, title: { display: true, text: '万元' } }
+                    },
+                    plugins: { legend: { position: 'top' } }
+                }
+            });
+
+            // Chart 7: Gross Margin Trend
+            const grossMarginData = {
+                labels: ['第一年', '第二年', '第三年'],
+                datasets: [
+                    {
+                        label: '硬件毛利率 (%)',
+                        data: [65, 67, 70],
+                        borderColor: '#00BCD4',
+                        backgroundColor: 'rgba(0, 188, 212, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    },
+                    {
+                        label: '增值服务毛利率 (%)',
+                        data: [95, 96, 97],
+                        borderColor: '#FF5722',
+                        backgroundColor: 'rgba(255, 87, 34, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }
+                ]
+            };
+            new Chart(document.getElementById('grossMarginChart'), {
+                type: 'line',
+                data: grossMarginData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, title: { display: true, text: '%' } } },
+                    plugins: { legend: { position: 'top' } }
+                }
+            });
+
+            // Chart 8: Funding Usage
+            const fundingUsageData = {
+                labels: ['产品研发与迭代', '市场推广与销售', '团队建设与日常运营', '流动资金与风险储备'],
+                datasets: [{
+                    data: [25, 35, 25, 15],
+                    backgroundColor: ['#8884d8', '#82ca9d', '#ffc658', '#ff7300'],
+                    hoverOffset: 4
+                }]
+            };
+            new Chart(document.getElementById('fundingUsageChart'), {
+                type: 'pie',
+                data: fundingUsageData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
-<script>
-    // 获取按钮元素
-    const learnMoreBtn = document.getElementById('learnMoreBtn');
-    // 获取更多信息区域
-    const moreInfoDiv = document.getElementById('moreInfo');
-
-    // 为按钮添加点击事件监听器
-    learnMoreBtn.addEventListener('click', () => {
-        // 切换 'hidden' 类来显示或隐藏更多信息
-        // 如果 moreInfoDiv 有 'hidden' 类，就移除它（显示）
-        // 如果 moreInfoDiv 没有 'hidden' 类，就添加它（隐藏）
-        moreInfoDiv.classList.toggle('hidden');
-
-        // 改变按钮文本，让用户知道点击后会发生什么
-        if (moreInfoDiv.classList.contains('hidden')) {
-            learnMoreBtn.textContent = '了解更多';
-        } else {
-            learnMoreBtn.textContent = '收起信息';
-        }
-    });
-</script>
 </html>
