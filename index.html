@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个网站</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* 这里可以添加一些自定义CSS，但我们主要使用Tailwind */
+        body {
+            font-family: 'Inter', sans-serif; /* 设置字体为 Inter，如果加载了 Google Fonts */
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-4 font-inter text-gray-800">
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden p-6 sm:p-8 md:p-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-4">欢迎来到 Anniring ！</h1>
+        <p class="text-lg text-center text-gray-600 mb-6">我们致力于连接真爱，见证承诺。</p>
+
+        <div class="bg-blue-100 p-6 rounded-lg shadow-md text-center">
+            <p class="text-gray-700 mb-4">这是一个关于我们产品的简单介绍。点击下方按钮了解更多详情。</p>
+            <button id="learnMoreBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                了解更多
+            </button>
+        </div>
+
+        <div id="moreInfo" class="mt-8 p-6 bg-green-100 rounded-lg shadow-md hidden">
+            <h3 class="text-xl font-semibold text-green-700 mb-3">更多关于 Anniring 的信息</h3>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                <li>**核心功能:** 配对灯光、共同日历、情绪监测、AI语音模拟。</li>
+                <li>**产品定位:** 专为18-35岁情侣设计，融合时尚、科技与情感互动。</li>
+                <li>**愿景:** 成为年轻情侣情感连接的首选智能穿戴品牌。</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    // 获取按钮元素
+    const learnMoreBtn = document.getElementById('learnMoreBtn');
+    // 获取更多信息区域
+    const moreInfoDiv = document.getElementById('moreInfo');
+
+    // 为按钮添加点击事件监听器
+    learnMoreBtn.addEventListener('click', () => {
+        // 切换 'hidden' 类来显示或隐藏更多信息
+        // 如果 moreInfoDiv 有 'hidden' 类，就移除它（显示）
+        // 如果 moreInfoDiv 没有 'hidden' 类，就添加它（隐藏）
+        moreInfoDiv.classList.toggle('hidden');
+
+        // 改变按钮文本，让用户知道点击后会发生什么
+        if (moreInfoDiv.classList.contains('hidden')) {
+            learnMoreBtn.textContent = '了解更多';
+        } else {
+            learnMoreBtn.textContent = '收起信息';
+        }
+    });
+</script>
+</html>
