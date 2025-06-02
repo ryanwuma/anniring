@@ -862,8 +862,25 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
-                        y: { type: 'linear', display: true, position: 'left', title: { display: true, text: '营收 (万元)'} },
-                        y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: '净利润 (万元)'}, grid: { drawOnChartArea: false } }
+                        y: { // 这是左侧的“总营收”轴
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: '营收 (万元)'},
+                            // ****** 关键调整在这里 ******
+                            min: 0,      // 总营收从0开始显示，或根据实际情况调整
+                            max: 16000   // 总营收的最大值设置为15000，略高于数据最大值13500
+                        },
+                        y1: { // 这是右侧的“净利润”轴
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: { display: true, text: '净利润 (万元)'},
+                            grid: { drawOnChartArea: false },
+                            // ****** 关键调整在这里 ******
+                            min: -1000,  // 净利润的最小值设置为-1000，略低于数据最小值-264.5
+                            max: 7000    // 净利润的最大值设置为8000，略高于数据最大值6785
+                        }
                     },
                     plugins: { legend: { position: 'top' } }
                 }
